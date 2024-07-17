@@ -1,0 +1,80 @@
+/* RESPONSIVE BEHAVIOUR
+   This example demonstrates responsive web page design.
+   It builds upon the W3Schools code in:
+     https://www.w3schools.com/howto/howto_css_images_side_by_side.asp
+*/ 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Responsive behaviour
+    - Headings remain centered regardless of page or containing element width.
+*/
+h1 {
+  color: rgb(34, 95, 97);
+  line-height: 2;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  color: rgb(34, 95, 97);
+  font-size: 24px;
+}
+
+/* Responsive behaviour
+    - On phones (i.e. screen width < 800px), display images in a vertical columns 
+      with images full width of screen.
+    - On workstation (i.e. screen width >= 800px), display images in a horizontal row, 
+      with images evenly spaced across screen.
+*/
+img {
+  width: 100%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* if on phone (i.e. screen width < 800px) */
+.column {
+  width: 100%;
+  padding: 5px;
+}
+
+/* else */ 
+@media screen and (min-width: 800px) {
+  .column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+}
+
+/* Responsive behaviour
+    - Footer remains fixed to the bottom of the page regardless of the page size or location.
+*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: cadetblue;
+  color:azure;
+  text-align: center;
+}
+
+.column1 {
+  border-width: 5px solid red;
+  float: left;
+  width: 50%;
+  padding: 5px;
+  line-height: 200px;
+}
